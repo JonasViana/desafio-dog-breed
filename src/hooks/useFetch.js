@@ -58,9 +58,8 @@ export const useFetch = url => {
   useEffect(() => {
     const httpRequest = async () => {
       if (method === 'POST') {
-        let fetchOptions = [url, config]
 
-        const res = await fetch(...fetchOptions)
+        const res = await fetch(url, config)
 
         const json = await res.json()
 
@@ -71,5 +70,5 @@ export const useFetch = url => {
     httpRequest()
   }, [config, method, url])
 
-  return { data, httpConfig, loading, error }
+  return { data, httpConfig, loading, error, callFetch }
 }

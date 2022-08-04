@@ -6,23 +6,25 @@ const url = 'https://dogbreed-api.q9.com.br/register'
 
 const Cadastro = () => {
 
-  const [user, setUser] = useState([])
-
   const [email, setEmail] = useState("")
 
   const [senha, setSenha] = useState("")
 
-  const { data ,  httpConfig } = useFetch(url)
+  const {   httpConfig, callFetch } = useFetch(url)
 
   const handleSubmit = (e) => {
     e.preventDefault()
 
-    const verificarEmail = {
-      email
+    const data = {
+      email: email
     }
 
-    httpConfig(user, 'POST')
+    httpConfig(data, 'POST')
+    console.log(callFetch)
+  }
 
+  if(!callFetch.token){
+    
   }
   return (
     <div>
