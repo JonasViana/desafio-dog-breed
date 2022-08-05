@@ -1,19 +1,12 @@
 import { useState, useEffect } from 'react'
 
-// custom hook
-
 export const useFetch = url => {
   const [data, setData] = useState(null)
-
-  // refatorando POST
 
   const [config, setConfig] = useState('')
   const [method, setMethod] = useState('')
   const [callFetch, setCallFetch] = useState('')
 
-  // loading
-
-  // tratando erros
 
   const [error, setError] = useState(null)
 
